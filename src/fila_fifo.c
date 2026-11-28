@@ -12,6 +12,13 @@ Fila* f_inicializar (void){
     return fila;
 }
 
+/* void f_inicializar(Fila **f) {
+    *f = (Fila *) malloc(sizeof(Fila));
+
+    (*f)->head = NULL;
+    (*f)->tamanho = 0;
+} */
+
 No_Fila* cria_no(int chave, int valor){
     No_Fila *no;
     no = (No_Fila *)(malloc(sizeof(No_Fila)));
@@ -22,7 +29,7 @@ No_Fila* cria_no(int chave, int valor){
         no->proximo = NULL;
     }
     else{
-        cria_no(chave, valor);
+        return cria_no(chave, valor);
     }
     return no;
 }
